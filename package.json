@@ -1,0 +1,60 @@
+{
+    "name": "CloudConinWebApp",
+    "version": "0.0.1",
+    "description": "CloudCoin Safe Web App",
+    "author": "A-Lang <alang.hsu@gmail.com>",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "clean": "rm -rf ./dist",
+        "clean-linux": "rm -rf ./dist/*-linux-*",
+        "clean-mac": "rm -rf ./dist/*-darwin-*",
+
+        "package": "npm run clean && npm run package-linux && npm run package-mac",
+        "package-linux": "npm run clean && electron-packager . CloudConinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=linux --arch=x64",
+        "package-mac": "electron-packager . CloudConinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=darwin --arch=x64",
+
+        "build-linux": "npm run package-linux && electron-builder \"dist/CloudConinWebApp-linux-x64\"  --platform=linux --arch=x64"
+    },
+    "build": {
+        "appId": "bank.cloudcoin.global",
+        "dmg": {
+            "title": "CloudCoin Safe Web App Installation",
+            "contents": [{
+                    "x": 110,
+                    "y": 150
+                },
+                {
+                    "x": 240,
+                    "y": 150,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ],
+            "icon": "build/icon.icns"
+        },
+        "linux": {
+            "target": [
+                "AppImage"
+            ]
+        },
+        "win": {
+            "target": "nsis",
+            "icon": "build/icon.ico"
+        }
+
+    },
+    "dependencies": {
+        "electron-debug": "^1.1.0",
+        "electron-google-oauth": "^2.0.0",
+        "file-exists": "^2.0.0",
+        "os-tmpdir": "^1.0.2"
+    },
+    "devDependencies": {
+        "devtron": "^1.4.0",
+        "electron": "latest",
+        "electron-packager": "latest",
+        "electron-builder": "latest",
+        "electron-prebuilt": "latest"
+    }
+}
