@@ -12,7 +12,7 @@ CloudCoinSafeWebApp is developed and built with Electron.
  * Electron NPM packages
 
 ## Install CloudCoinWebApp Prebuilt Installer
-for Linux
+for Linux ([What's the AppImage?](http://appimage.org))
 ```
 chmod 0755 CloudCoinWebApp-0.0.1-x86_64.AppImage
 ./CloudCoinWebApp-0.0.1-x86_64.AppImage
