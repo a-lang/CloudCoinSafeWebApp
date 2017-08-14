@@ -1,5 +1,5 @@
 {
-    "name": "CloudConinWebApp",
+    "name": "CloudCoinWebApp",
     "version": "0.0.1",
     "description": "CloudCoin Safe Web App",
     "author": "A-Lang <alang.hsu@gmail.com>",
@@ -11,10 +11,12 @@
         "clean-mac": "rm -rf ./dist/*-darwin-*",
 
         "package": "npm run clean && npm run package-linux && npm run package-mac",
-        "package-linux": "npm run clean && electron-packager . CloudConinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=linux --arch=x64",
-        "package-mac": "electron-packager . CloudConinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=darwin --arch=x64",
+        "package-linux64": "npm run clean && electron-packager . CloudCoinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=linux --arch=x64",
+        "package-linux32": "npm run clean && electron-packager . CloudCoinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=linux --arch=ia32",
+        "package-mac": "electron-packager . CloudCoinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=darwin --arch=x64",
 
-        "build-linux": "npm run package-linux && electron-builder \"dist/CloudConinWebApp-linux-x64\"  --platform=linux --arch=x64"
+        "build-linux64": "npm run package-linux64 && electron-builder \"dist/CloudCoinWebApp-linux-x64\"  --platform=linux --arch=x64",
+        "build-linux32": "npm run package-linux32 && electron-builder \"dist/CloudCoinWebApp-linux-ia32\"  --platform=linux --arch=ia32"
     },
     "build": {
         "appId": "bank.cloudcoin.global",
@@ -52,7 +54,7 @@
     },
     "devDependencies": {
         "devtron": "^1.4.0",
-        "electron": "latest",
+        "electron": "^1.7.5",
         "electron-packager": "latest",
         "electron-builder": "latest",
         "electron-prebuilt": "latest"

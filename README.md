@@ -2,7 +2,7 @@ CloudCoinSafeWebApp
 ===================
 Used to Authenticate, Store and Payout CloudCoins. 
 
-This software is provided as is with all faults, defects and errors and without warranty of any kind.
+*NOTE: This software is provided as is with all faults, defects and errors and without warranty of any kind.*
 
 CloudCoinSafeWebApp is developed and built with Electron.
 
@@ -11,13 +11,24 @@ CloudCoinSafeWebApp is developed and built with Electron.
 ## Requirement
  * Electron NPM packages
 
-## Installation
+## Install CloudCoinWebApp Prebuilt Installer
+for Linux
+```
+chmod 0755 CloudCoinWebApp-0.0.1-x86_64.AppImage
+./CloudCoinWebApp-0.0.1-x86_64.AppImage
+```
+
+## Optional: Create Electron Development
 ```
 cd CloudCoinSafeWebApp
 npm install
 ```
 
-## Build the distribution files
+## Optional: Build the distribution files
+```
+npm run build-linux64
+```
+
 
 
 
