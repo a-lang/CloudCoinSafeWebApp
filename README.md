@@ -19,6 +19,7 @@ for Linux ([What's the AppImage?](http://appimage.org))
 chmod 0755 CloudCoinWebApp-0.0.1-x86_64.AppImage
 ./CloudCoinWebApp-0.0.1-x86_64.AppImage
 ```
+for Mac: CloudCoinWebApp-*-mac.zip
 
 ## Optional: Create Electron Development
 ```
@@ -29,6 +30,7 @@ npm install
 ## Optional: Build the distribution files
 ```
 npm run build-linux64
+npm run build-mac
 ```
 
 

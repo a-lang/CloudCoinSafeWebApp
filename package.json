@@ -13,27 +13,18 @@
         "package": "npm run clean && npm run package-linux && npm run package-mac",
         "package-linux64": "npm run clean && electron-packager . CloudCoinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=linux --arch=x64",
         "package-linux32": "npm run clean && electron-packager . CloudCoinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=linux --arch=ia32",
-        "package-mac": "electron-packager . CloudCoinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=darwin --arch=x64",
+        "package-mac": "npm run clean && electron-packager . CloudCoinWebApp --out=dist/ --ignore=dist --ignore=node_modules/electron-* --platform=darwin --arch=x64",
 
         "build-linux64": "npm run package-linux64 && electron-builder \"dist/CloudCoinWebApp-linux-x64\"  --platform=linux --arch=x64",
-        "build-linux32": "npm run package-linux32 && electron-builder \"dist/CloudCoinWebApp-linux-ia32\"  --platform=linux --arch=ia32"
+        "build-linux32": "npm run package-linux32 && electron-builder \"dist/CloudCoinWebApp-linux-ia32\"  --platform=linux --arch=ia32",
+        "build-mac": "npm run package-mac && electron-builder \"dist/CloudCoinWebApp-darwin-x64\"  --platform=darwin --arch=x64"
     },
     "build": {
         "appId": "bank.cloudcoin.global",
-        "dmg": {
-            "title": "CloudCoin Safe Web App Installation",
-            "contents": [{
-                    "x": 110,
-                    "y": 150
-                },
-                {
-                    "x": 240,
-                    "y": 150,
-                    "type": "link",
-                    "path": "/Applications"
-                }
-            ],
-            "icon": "build/icon.icns"
+        "mac": {
+            "category": "public.app-category.finance",
+            "icon": "build/128x128.icns",
+            "target": "zip"
         },
         "linux": {
             "target": [
