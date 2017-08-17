@@ -51,7 +51,7 @@
         "devtron": "^1.4.0",
         "electron": "^1.7.5",
         "electron-packager": "latest",
-        "electron-builder": "latest",
+        "electron-builder": "^19.20.1",
         "electron-prebuilt": "latest"
     }
 }
